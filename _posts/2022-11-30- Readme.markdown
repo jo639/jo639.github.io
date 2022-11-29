@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "README"
+title: "프로젝트 일기"
 date: 2022-11-30
 publised: true
 categories:
@@ -8,7 +8,25 @@ categories:
 ### 블로그 시작 환경 만들기
 - ruby 및 jekyll 설치
 Github Blog 를 만들고 테마를 적용하여 나만의 블로그를 만들어야 했다.  학교에서 지급된 우분투 환경에는 기본적으로 ruby가 설치되어 있었고, 지킬 홈페이지의 가이드에 따라 jekyll 설치를 진행했다. 나는 별다른 error 없이 순탄하게 설치가 완료되었고, 곧바로 실습에 들어갔다.
-
+{% highlight ruby %}
+ruby -v
+gem -v
+jekyll -v
+{% endhighlight %}
+위 명령을 통해 제대로 설치되어있는지 확인하였다.
+### 블로그 페이지 구현하기
+- Github와 연동하기
+{% highlight ruby %}
+git clone *내 주소* GitBlog
+{% endhighlight %}
+를 통해서 내 로컬 저장소에 디렉토리를 만들고
+{% highlight ruby %}
+jekyll new . --force
+{% endhighlight %}
+로 디렉토리에 jekyll을 설치했다.
+{% highlight ruby %}
+jekyll serve
+{% endhighlight %}
 를 실행하면 출력되는 주소 **localhost:4000**에 접속하여 첫 블로그 페이지 구현을 완료했다!
 ### 첫 포스팅 업로드하기
-- 
+- Post Upload 방식 알아보기
