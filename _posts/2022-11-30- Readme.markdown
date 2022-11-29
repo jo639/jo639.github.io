@@ -6,6 +6,7 @@ publised: true
 categories:
 ---
 ### 블로그 시작 환경 만들기
+
 - ruby 및 jekyll 설치
 Github Blog 를 만들고 테마를 적용하여 나만의 블로그를 만들어야 했다.  학교에서 지급된 우분투 환경에는 기본적으로 ruby가 설치되어 있었고, 지킬 홈페이지의 가이드에 따라 jekyll 설치를 진행했다. 나는 별다른 error 없이 순탄하게 설치가 완료되었고, 곧바로 실습에 들어갔다.
 {% highlight ruby %}
@@ -14,7 +15,9 @@ gem -v
 jekyll -v
 {% endhighlight %}
 위 명령을 통해 제대로 설치되어있는지 확인하였다.
+
 ### 블로그 페이지 구현하기
+
 - Github와 연동하기
 {% highlight ruby %}
 git clone *내 주소* GitBlog
@@ -28,5 +31,36 @@ jekyll new . --force
 jekyll serve
 {% endhighlight %}
 를 실행하면 출력되는 주소 **localhost:4000**에 접속하여 첫 블로그 페이지 구현을 완료했다!
+
 ### 첫 포스팅 업로드하기
+
 - Post Upload 방식 알아보기
+포스트 업로드는 _posts 폴더에서 할 수 있다.
+파일 이름은 날짜-제목 형태로
+{% highlight ruby %}
+YYYY-MM-DD-Title.markdown
+{% endhighlight %}
+다음과 같이 이름을 지정한다.
+- Markdown 형식 알아보기
+- Local에서 Remote로 반영하기
+현재는 로컬 저장소에만 저장되었는 변경 정보를 원격저장소로 전송하는 과정이다.
+
+그런데 새로운 포스트가 업로드되지 않았다?
+- 포스팅이 반영되지 않는 에러 해결하기
+원인을 탐색한 결과 _posts에서 파일을 생성할 때 지정한 날짜가 당시 날짜보다 나중이라는 것.
+즉, 미래를 날짜로 지정한 경우 포스트가 정상적으로 업로드되지 않을 수 있음을 발견하였다.
+(지정한 날짜와 업로드한 날짜가 같을지라도 pc의 시간이 다른 나라로 설정되어 있는 경우, 시차에 따라 같은 에러가 발생할 수 있다고 한다.)
+이를 해결하기 위해, _config.yml 에서
+{% highlight ruby %}
+future: true
+{% endhighlight %}
+라는 코드를 추가하였다.
+
+그런데도 해결되지 않는다면..?
+내 경우에는 위 코드 한줄을 추가했을 때에도 포스트가 추가되지 않았다.
+나는 포스트 문서의 시작부분 형식을 지정하는 곳에
+{% highlight ruby %}
+published: true
+{% endhighlight %}
+를 추가함으로써 해결하였다.
+원래 기본적으로 published는 true로 되어있다고 하는데 어떠한 이유에서인지 올바르게 작동하지 않은 것으로 예상된다.
