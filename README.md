@@ -114,8 +114,51 @@ baseurl: "/polar-bear-theme/" # the subpath of your site, e.g. /blog/
 url: "https://jo639.github.io" # the base hostname & protocol for your site
 {% endhighlight %}
 
-- 그런데 자꾸 테마의 데모페이지가 반영되는 문제를 발견했다.
+> 그런데 자꾸 테마의 데모페이지가 반영되는 문제를 발견했다.
 내가 처음 fork 해올 때 저장소의 이름을 바꾸지 않고 가져와서 baseurl이 같은 탓에 연결이 꼬인 것으로 보였다.
 그래서 repository 이름을 변경해주고 변경한 주소에 맞게 baseurl을 다시 입력했더니 완전히 해결되었다.  
 
 ### 이로써 테마 적용까지 성공하였다!
+
+## 댓글 기능 구현하기
+
+우선 [Disqus 홈페이지](https://disqus.com/)에 접속한다.   
+
+[다음 절차](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/c892cead-42b2-4e27-bf24-f84a0d5630f6/blog_four.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20221128%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20221128T075035Z&X-Amz-Expires=86400&X-Amz-Signature=d244db4041bca277c2f3c0abfcafb6f31824ca74e372df2a27e71d51998f2dd3&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22blog_four.pdf%22&x-id=GetObject)에 따라 가입과 세팅을 진행한다.  
+
+주의할 점은 _config.yml에
+```
+comment:
+    provider: "disqus"
+    disqus:
+        shortname: "jo639"
+```
+와 같이 key-value를 추가해야 한다는 것이다.  
+또한 _layouts/post.html 파일에서 다음과 같은 코드를 추가하여 push 해준다.
+```
+{% if page.comments %}
+</div>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    
+    let PAGE_URL = "{{site.url}}{{page.url}}"
+    let PAGE_IDENTIFIER = "{{page.url}}"
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://jo639.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
+```
+  
+이후 댓글 기능을 사용하고 싶은 포스트에만 ```comments: true```를 추가해준다.
