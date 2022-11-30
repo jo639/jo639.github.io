@@ -4,6 +4,7 @@ title: "프로젝트 일기"
 date: 2022-11-30
 publised: true
 categories:
+comments: true
 ---
 ## 블로그 시작 환경 만들기
 
