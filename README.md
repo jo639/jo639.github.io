@@ -92,14 +92,14 @@ published: true
 1. 기존 블로그에 테마 적용하기: ```git clone``` 으로 로컬에 받아온 후, _posts를 제외한 파일에 테마를 덮어쓰고 push 하기
 2. 처음부터 테마를 적용하여 만들기: 원하는 테마의 원격 저장소에서 fork 해온 후, ```git clone```으로 받아오기  
 
-두 가지 방법 중 나는 2번을 사용했다.
+두 가지 방법 중 나는 2번째 방법을 사용했다.
 
 #### 테마 적용 실습!
 나는 simple하면서 색감이 마음에 들어 polar-bear 테마를 선택했다.  
 내 저장소로 fork 해온 후,
 ```git clone 내 주소 GitBlog```하여 로컬 저장소로 가져왔다.
 ```jekyll serve```를 진행한 결과, 올바르게 페이지가 출력되었다.
-그러나 원격저장소에 제대로 push했음에도 *username*.github.io에 접속하였을 때,  
+그러나 원격저장소에 제대로 push 했음에도 *username*.github.io에 접속하였을 때,  
 페이지가 깨지는 현상을 발견했다.
 
 #### 테마 원격저장소에 반영하기
@@ -108,14 +108,14 @@ baseurl과 url을 올바르게 설정하지 않아 페이지가 제대로 연결
 
 ![baseurl](https://kairos03.github.io/assets/img/posts/jekyll/2017-09-11-learing-Up-Confusion-Around-baseurl/1.png)  
 
-내 주소에서 baseurl부분과 url부분을 찾아 _config.yml에 다음과 같이 입력해주었다.
+내 주소에서 baseurl 부분과 url 부분을 찾아 _config.yml에 다음과 같이 입력해주었다.
 {% highlight ruby %}
 baseurl: "/polar-bear-theme/" # the subpath of your site, e.g. /blog/
 url: "https://jo639.github.io" # the base hostname & protocol for your site
 {% endhighlight %}
 
 - 그런데 자꾸 테마의 데모페이지가 반영되는 문제를 발견했다.
-내가 처음 fork해올 때 저장소의 이름을 바꾸지 않고 가져와서 baseurl이 같은 탓에 연결이 꼬인 것으로 보였다.
+내가 처음 fork 해올 때 저장소의 이름을 바꾸지 않고 가져와서 baseurl이 같은 탓에 연결이 꼬인 것으로 보였다.
 그래서 repository 이름을 변경해주고 변경한 주소에 맞게 baseurl을 다시 입력했더니 완전히 해결되었다.  
 
 ### 이로써 테마 적용까지 성공하였다!
