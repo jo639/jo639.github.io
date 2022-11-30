@@ -3,8 +3,8 @@ title: Polar Bear
 email: jo639@kookmin.ac.kr
 description: > # this means to ignore newlines until "baseurl:"
   Jekyll Theme Demo
-baseurl: "/polar-bear-theme-Jo/" # the subpath of your site, e.g. /blog/
-url: "https://jo639.github.io" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
 twitter_username: username
 github_username: jo639
 future: true
