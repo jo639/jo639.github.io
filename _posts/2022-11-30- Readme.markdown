@@ -111,8 +111,8 @@ published: true
 
 #### 테마 원격저장소에 반영하기
 원격 저장소에 반영되지 않는 원인은 _config.yml에서 찾을 수 있었다.
-baseurl과 url을 올바르게 설정하지 않아 페이지가 제대로 연결되지 않은 것 같다.
-![baseurl](https://kairos03.github.io/assets/img/posts/jekyll/2017-09-11-learing-Up-Confusion-Around-baseurl/1.png){:height="100px" width="800px"}
+baseurl과 url을 올바르게 설정하지 않아 페이지가 제대로 연결되지 않은 것 같다.  
+![baseurl](https://kairos03.github.io/assets/img/posts/jekyll/2017-09-11-learing-Up-Confusion-Around-baseurl/1.png)  
 내 주소에서 baseurl부분과 url부분을 찾아 _config.yml에 다음과 같이 입력해주었다.
 {% highlight ruby %}
 baseurl: "/polar-bear-theme" # the subpath of your site, e.g. /blog/
