@@ -20,7 +20,7 @@ jekyll -v
 
 Github와 연동하기
 {% highlight ruby %}
-git clone **내 주소** GitBlog
+git clone ***내 주소*** GitBlog
 {% endhighlight %}
 를 통해서 내 로컬 저장소에 디렉토리를 만들고
 {% highlight ruby %}
