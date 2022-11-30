@@ -7,4 +7,4 @@ permalink: /about/
 
 * Name: Minhyeong Jo
 * Uinversity: Kookmin univ.
-* Department: Software | 20223140
+* Department: Software 20223140
