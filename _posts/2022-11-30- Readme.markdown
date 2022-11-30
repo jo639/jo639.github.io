@@ -7,7 +7,7 @@ categories:
 ---
 ## 블로그 시작 환경 만들기
 
-- ruby 및 jekyll 설치
+**ruby 및 jekyll 설치**
 Github Blog 를 만들고 테마를 적용하여 나만의 블로그를 만들어야 했다.  학교에서 지급된 우분투 환경에는 기본적으로 ruby가 설치되어 있었고, 지킬 홈페이지의 가이드에 따라 jekyll 설치를 진행했다. 나는 별다른 error 없이 순탄하게 설치가 완료되었고, 곧바로 실습에 들어갔다.
 {% highlight ruby %}
 ruby -v
@@ -18,9 +18,9 @@ jekyll -v
 
 ## 블로그 페이지 구현하기
 
-- Github와 연동하기
+Github와 연동하기
 {% highlight ruby %}
-git clone *내 주소* GitBlog
+git clone **내 주소** GitBlog
 {% endhighlight %}
 를 통해서 내 로컬 저장소에 디렉토리를 만들고
 {% highlight ruby %}
@@ -53,12 +53,12 @@ categories:
 {% endhighlight %}
 그 아래로는 마크다운의 문법에 맞추에 글씨의 크기, 기울기, 강조 등을 변경하여 글을 작성할 수 있다.
 또한 링크나 이미지, 표, 코드 블록, 각주 등도 사용 가능하다.
-마크다운 문법 참고 [링크](https://velog.io/@bluewind8791/Markdown-Kramdown)
+[마크다운 문법 참고 링크](https://velog.io/@bluewind8791/Markdown-Kramdown)
 
 - Local에서 Remote로 반영하기
 현재는 로컬 저장소에만 저장되었는 변경 정보를 원격저장소로 전송하는 과정이다.
 파일을 수정했다면 jekyll serve를 통해 확인해보자. 올바르게 변경된 것을 알 수 있다.
-그렇지만 본인의 Github Page (*username*.github.io)에 접속하였을 때, 올바르게 반영되지 않는다.
+그렇지만 본인의 Github Page (***username***.github.io)에 접속하였을 때, 올바르게 반영되지 않는다.
 아직 원격저장소에 반영하지 않았기 때문!
 {% highlight ruby %}
 git add *수정한 파일*
