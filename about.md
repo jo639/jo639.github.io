@@ -1,10 +1,10 @@
 ---
 layout: page
-title: About
+title: About this blog
 permalink: /about/
 ---
-*Polar Bear* is a lightweight and customisable Jekyll Theme.
+*jo639.github.io* is a blog of Jo's Eureka Class
 
-* Author: Camille Diez
-* Github: http://github.com/diezcami
-* Portfolio: http://diezcami.github.io
+* Name: Minhyeong Jo
+* Uinversity: Kookmin univ.
+* Department: Software | 20223140
